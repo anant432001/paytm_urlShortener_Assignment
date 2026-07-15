@@ -10,7 +10,6 @@ import com.paytm.urlShortener.generator.ShortCodeGenerator;
 import com.paytm.urlShortener.repository.UrlRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -28,7 +27,6 @@ public class UrlShorteningServiceImpl implements UrlShorteningService {
     }
 
     @Override
-    @Transactional
     public ShortenUrlResponseDTO shortenUrl(ShortenUrlRequestDTO request) {
         validateUrl(request.getUrl());
 

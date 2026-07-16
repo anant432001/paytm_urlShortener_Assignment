@@ -34,7 +34,6 @@ public class UrlController {
     @GetMapping("/{code}")
     public ResponseEntity<Void> redirect(@PathVariable String code) {
         String originalUrl = redirectService.getOriginalUrl(code);
-        System.out.println("originalUrl: " + originalUrl);
         return ResponseEntity
                 .status(HttpStatus.MOVED_PERMANENTLY)
                 .location(URI.create(originalUrl))

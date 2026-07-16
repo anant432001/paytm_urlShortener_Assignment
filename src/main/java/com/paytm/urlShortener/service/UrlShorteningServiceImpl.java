@@ -81,9 +81,9 @@ public class UrlShorteningServiceImpl implements UrlShorteningService {
 
     private ShortenUrlResponseDTO toResponse(UrlEntity urlEntity) {
         return new ShortenUrlResponseDTO(
-                urlEntity.getShortCode(),
-                baseUrl + "/" + urlEntity.getShortCode(),
                 urlEntity.getOriginalUrl(),
+                baseUrl + "/" + urlEntity.getShortCode(),
+                urlEntity.getShortCode(),
                 urlEntity.getCreatedAt()
         );
     }
